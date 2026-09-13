@@ -1,0 +1,34 @@
+{
+  "metric": "AA-PQ (stored as hf-pq in the evaluation artifacts; higher is better)",
+  "selection_scope": "Five user-approved Orchestra listening-test recordings",
+  "selection_rule": "Keep the three recordings with the largest SAMECFM margin over BABE2-FMS",
+  "selected": [
+    {
+      "title": "Rigoletto Selection, Part 1",
+      "window_seconds": "75-80",
+      "input": 5.102414131,
+      "babe2_fms": 5.515188217,
+      "samecfm": 7.563459396,
+      "samecfm_improvement_vs_input": 2.461045265,
+      "samecfm_margin_over_babe2_fms": 2.048271179
+    },
+    {
+      "title": "Ballet Egyptian, Nos. 1 and 2",
+      "window_seconds": "110-115",
+      "input": 4.768242359,
+      "babe2_fms": 5.148619652,
+      "samecfm": 7.066556454,
+      "samecfm_improvement_vs_input": 2.298314095,
+      "samecfm_margin_over_babe2_fms": 1.917936802
+    },
+    {
+      "title": "Hungarian Dance No. 5",
+      "window_seconds": "95-100",
+      "input": 4.854475021,
+      "babe2_fms": 5.602498531,
+      "samecfm": 7.189064503,
+      "samecfm_improvement_vs_input": 2.334589482,
+      "samecfm_margin_over_babe2_fms": 1.586565972
+    }
+  ]
+}

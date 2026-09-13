@@ -8,5 +8,15 @@ authors:
   - family-names: Cho
     given-names: Steven
     orcid: https://orcid.org/0009-0008-0040-9312
+  - family-names: Koo
+    given-names: Junghyun
+  - family-names: Lafargue
+    given-names: Raphael
+  - family-names: Dhyani
+    given-names: Tushar
+  - family-names: Moliner
+    given-names: Eloi
+  - family-names: Mitsufuji
+    given-names: Yuki
 repository-code: https://github.com/stevencho-sony/full_mix_historical_music_restoration
 license: MIT

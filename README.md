@@ -4,7 +4,9 @@ Official implementation and evaluation resources for **Full-Mix Historical Music
 
 This repository studies historical music restoration as conditional flow matching in the continuous latent space of the frozen [SAME-L](https://huggingface.co/stabilityai/SAME-L) audio autoencoder. The proposed 40M-parameter model, **SAMECFM**, maps degraded historical-audio latents toward clean musical-audio latents and decodes the restored representation at 44.1 kHz.
 
-> **Release status:** the lean code and results shell is ready. The paper PDF/source, checkpoints, dataset DOI, and arXiv identifier will be added before the public release.
+> **Release status:** implementation, paper PDF, interactive demo, aggregate subjective results, and the reserved dataset DOI are included. Model checkpoints and the arXiv identifier are forthcoming.
+
+**[Interactive demo](demo/)** · **[Paper PDF](paper/full_mix_historical_music_restoration.pdf)** · **[Dataset DOI (reserved)](https://doi.org/10.5281/zenodo.22737610)**
 
 ## Method
 
@@ -33,8 +35,9 @@ The principal training configuration uses:
 ├── assets/          # Paper-ready qualitative waveform/spectrogram examples
 ├── checkpoints/     # Checkpoint download instructions (forthcoming)
 ├── config/          # Public SAMECFM-40M configuration
-├── examples/        # Example-audio instructions (forthcoming)
-├── paper/           # Paper PDF and source (awaiting local files)
+├── demo/            # Static Next.js paper site and synchronized audio examples
+├── examples/        # Command-line example instructions
+├── paper/           # Paper PDF
 ├── restor/          # Model, corruption, training, and inference implementation
 ├── results/         # Aggregate, anonymous evaluation results
 ├── main.py          # Training and inference entry point
@@ -42,6 +45,18 @@ The principal training configuration uses:
 ```
 
 No private listening-test responses, credentials, training data, inference corpora, or model checkpoints are stored in this repository.
+
+## Interactive demo
+
+The static site under [`demo/`](demo/) contains six synchronized historical comparisons, the method diagram, and aggregate subjective results. Run it locally with Node.js 22:
+
+```bash
+cd demo
+npm ci
+npm run dev
+```
+
+For Vercel, import this repository and set the project **Root Directory** to `demo`. No server, environment variables, or runtime inference are required.
 
 ## Installation
 
@@ -79,8 +94,6 @@ torchrun --standalone --nproc_per_node=4 main.py train \
   --config config/samecfm40_fms.yaml
 ```
 
-The public release will include the preprocessing entry point and exact dataset manifests after the supplied paper-source archive is available in this workspace.
-
 ## Evaluation
 
 The paper evaluates restoration on:
@@ -94,11 +107,11 @@ Aggregate subjective results are provided under [`results/`](results/). The sens
 
 ## Dataset
 
-The 149-recording historical unpaired test set—70 Orchestra and 79 Light Orchestra full-length recordings—is being prepared as a separate Zenodo artifact. Its DOI will be linked here when reserved.
+The historical unpaired test set contains 149 full-length recordings: 70 Orchestra and 79 Light Orchestra items. Zenodo DOI [`10.5281/zenodo.22737610`](https://doi.org/10.5281/zenodo.22737610) is reserved and will resolve after the dataset draft is published.
 
 ## Checkpoints and examples
 
-Checkpoint and public audio-example URLs are forthcoming. Large binary artifacts will be hosted outside Git rather than committed to repository history.
+The small public listening examples are bundled in the demo. Model checkpoints will be hosted outside Git and added with SHA-256 checksums.
 
 ## Limitations
 
@@ -114,7 +127,7 @@ If you use this work, please cite the paper and the accompanying dataset. Final 
 ```bibtex
 @article{cho2026fullmix,
   title   = {Full-Mix Historical Music Restoration in Latent Space},
-  author  = {Cho, Steven},
+  author  = {Cho, Steven and Koo, Junghyun and Lafargue, Raphael and Dhyani, Tushar and Moliner, Eloi and Mitsufuji, Yuki},
   year    = {2026},
   note    = {arXiv preprint; identifier forthcoming}
 }

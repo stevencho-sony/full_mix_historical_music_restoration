@@ -1,3 +1,3 @@
 # Audio examples
 
-Public-domain input/restoration examples and a small command-line example will be added before release. Large audio files will be hosted outside Git and accompanied by checksums.
+The browser-ready public-domain input/restoration excerpts are stored under [`../demo/public/audio/`](../demo/public/audio/) and exposed through the synchronized web player. Full datasets and checkpoints remain external to Git.
