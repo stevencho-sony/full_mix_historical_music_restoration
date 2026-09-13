@@ -1,0 +1,9 @@
+example,global_window,degradation,condition,waveform,spectrogram,sample_rate_hz,duration_seconds,stft_n_fft,stft_hop_length,spectrogram_range_db
+mozart_window_000460_degradation_04,460,04,degraded_input,mozart_window_000460_degradation_04/degraded_input_waveform.png,mozart_window_000460_degradation_04/degraded_input_spectrogram.png,44100,5,2048,512,"[-100,0]"
+mozart_window_000460_degradation_04,460,04,babe2_fms,mozart_window_000460_degradation_04/babe2_fms_waveform.png,mozart_window_000460_degradation_04/babe2_fms_spectrogram.png,44100,5,2048,512,"[-100,0]"
+mozart_window_000460_degradation_04,460,04,samecfm_40m_fms,mozart_window_000460_degradation_04/samecfm_40m_fms_waveform.png,mozart_window_000460_degradation_04/samecfm_40m_fms_spectrogram.png,44100,5,2048,512,"[-100,0]"
+mozart_window_000460_degradation_04,460,04,clean_ground_truth,mozart_window_000460_degradation_04/clean_ground_truth_waveform.png,mozart_window_000460_degradation_04/clean_ground_truth_spectrogram.png,44100,5,2048,512,"[-100,0]"
+tchaikovsky_window_000645_degradation_00,645,00,degraded_input,tchaikovsky_window_000645_degradation_00/degraded_input_waveform.png,tchaikovsky_window_000645_degradation_00/degraded_input_spectrogram.png,44100,5,2048,512,"[-100,0]"
+tchaikovsky_window_000645_degradation_00,645,00,babe2_fms,tchaikovsky_window_000645_degradation_00/babe2_fms_waveform.png,tchaikovsky_window_000645_degradation_00/babe2_fms_spectrogram.png,44100,5,2048,512,"[-100,0]"
+tchaikovsky_window_000645_degradation_00,645,00,samecfm_40m_fms,tchaikovsky_window_000645_degradation_00/samecfm_40m_fms_waveform.png,tchaikovsky_window_000645_degradation_00/samecfm_40m_fms_spectrogram.png,44100,5,2048,512,"[-100,0]"
+tchaikovsky_window_000645_degradation_00,645,00,clean_ground_truth,tchaikovsky_window_000645_degradation_00/clean_ground_truth_waveform.png,tchaikovsky_window_000645_degradation_00/clean_ground_truth_spectrogram.png,44100,5,2048,512,"[-100,0]"

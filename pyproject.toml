@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "full-mix-historical-music-restoration"
+version = "0.1.0"
+description = "Conditional flow matching for historical music restoration in SAME-L latent space"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Steven Cho"}]
+dependencies = [
+  "torch>=2.0",
+  "torchaudio>=2.0",
+  "PyYAML>=6.0",
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "soundfile>=0.12",
+  "tensorboard>=2.14",
+  "auraloss[all]>=0.4.0",
+  "stable-audio-3 @ git+https://github.com/Stability-AI/stable-audio-3",
+]
+
+[tool.setuptools.packages.find]
+include = ["restor*"]
+
+[tool.setuptools]
+py-modules = ["main"]
+
+[project.scripts]
+historical-music-restoration = "main:main"

@@ -1,0 +1,133 @@
+codec:
+  name: same_l
+
+denoiser:
+  type: cfm_40m
+  cfm_40m:
+    latent_channels: 256
+    condition_channels: 256
+    d_model: 576
+    num_layers: 8
+    num_attention_heads: 9
+    mlp_ratio: 2.0
+    dropout: 0.0
+    attention_dropout: 0.0
+    time_embed_dim: 576
+    cfg_dropout_prob: 0.1
+    cfg_scale: 1.0
+    timestep_sampler: uniform
+    inference_timestep_schedule: uniform
+    logsnr_min: -6.2
+    logsnr_max: 6.2
+    inference_steps_default: 1
+    inference_steps_eval: [1, 10, 20, 30, 40, 50]
+    gradient_clip_norm: 1.0
+    ema_decay: 0.9999
+    learning_rate: 2.0e-4
+    weight_decay: 0.01
+    betas: [0.9, 0.999]
+
+corruption:
+  filter_mode: segment_fft
+  eq1:
+    freq_nodes_hz: [40, 80, 160, 320, 640, 1280, 2560, 5120, 10240, 20480]
+    mean_db: [-9.0, -4.9, -4.9, 0.0, 0.0, -3.1, -1.1, -8.6, -2.1, 0.0]
+    std_db: [14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7]
+    min_db: [-80, -80, -80, -80, -80, -80, -80, -80, -80, -80]
+    max_db: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  nonlinearity:
+    a_mean: 2.2
+    a_std: 0.9
+    a_min: 0.75
+    a_max: 4.5
+    wet_mean: 0.18
+    wet_std: 0.09
+    wet_min: 0.03
+    wet_max: 0.4
+  eq2:
+    freq_nodes_hz: [40, 80, 160, 320, 640, 1280, 2560, 5120, 10240, 20480]
+    mean_db: [-3.0, -4.9, -4.9, 0.0, 0.0, -3.1, -1.1, -8.6, -2.1, 0.0]
+    std_db: [14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7, 14.7]
+    min_db: [-80, -80, -80, -80, -80, -80, -80, -80, -80, -80]
+    max_db: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  bandpass:
+    low_cutoff_mean_hz: 100.0
+    low_cutoff_std_hz: 50.0
+    low_cutoff_min_hz: 40.0
+    low_cutoff_max_hz: 250.0
+    high_cutoff_mean_hz: 3200.0
+    high_cutoff_std_hz: 850.0
+    high_cutoff_min_hz: 2000.0
+    high_cutoff_max_hz: 5500.0
+    low_slope_mean_dboct: 18.0
+    low_slope_std_dboct: 8.0
+    low_slope_min_dboct: 6.0
+    low_slope_max_dboct: 48.0
+    high_slope_mean_dboct: 30.0
+    high_slope_std_dboct: 10.0
+    high_slope_min_dboct: 12.0
+    high_slope_max_dboct: 60.0
+  gramophone_noise:
+    noise_dir: data/gramophone_record_noise
+    snr_mean_db: 11.0
+    snr_std_db: 4.5
+    snr_min_db: 2.0
+    snr_max_db: 20.0
+
+dataset:
+  root: data/public_classical_fullmixes_plus_sections
+  sample_rate: 44100
+  segment_duration: 5.0
+  min_stems: 1
+  max_stems: null
+  samples_per_song: 1000
+
+spectral:
+  fft_size: 1024
+  hop_size: 256
+  win_length: 1024
+  center: true
+  n_mels: 128
+  multires_fft_sizes: [1024, 2048, 512]
+  multires_hop_sizes: [120, 240, 50]
+  multires_win_lengths: [600, 1200, 240]
+
+precompute:
+  enabled: true
+  output_root: data/precomputed
+  train_dir: data/precomputed/train
+  validate_dir: data/precomputed/validate
+  ground_truth_dir: data/precomputed/ground_truth
+  target_lufs: -23.0
+  val_ratio: 0.2
+
+loss:
+  dit_mse_objective: latent_mse
+  stft_objective: complex_stft_mse
+  latent_weight: 1.0
+  spectral_weight: 0.1
+  spectral_fft_sizes: [512, 1024, 2048]
+
+training:
+  batch_size: 192
+  lr: 1.0e-4
+  weight_decay: 1.0e-5
+  num_epochs: 5000
+  num_workers: 4
+  val_ratio: 0.1
+  tensorboard_every_epochs: 1
+  log_audio_every_epochs: 50
+  checkpoint_every: 100000
+  profile_steps: false
+  profile_every: 1
+  profile_cuda_sync: false
+  seed: 42
+  val_every_steps: 30000
+  log_audio_every_steps: 150000
+  keep_last_checkpoints: 5
+  max_steps: 11300000
+
+logging:
+  num_audio_samples: 10
+  num_precomputed_audio_windows: 10
+  precomputed_audio_window_indices: null
