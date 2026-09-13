@@ -73,11 +73,11 @@ Edit [`config/site.ts`](config/site.ts):
 ```ts
 paperUrl: "/paper.pdf",
 githubUrl: "https://github.com/stevencho-sony/full_mix_historical_music_restoration",
-datasetUrl: "",
+datasetUrl: "https://doi.org/10.5281/zenodo.22737610",
 arxivUrl: "",
 ```
 
-Unknown paper and code links are intentionally hidden. Until `datasetUrl` is supplied, the dataset section visibly labels its Zenodo link as forthcoming.
+Unknown paper and code links are intentionally hidden. The published dataset uses its permanent Zenodo DOI.
 
 ## Deploy to Vercel
 

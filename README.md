@@ -4,9 +4,9 @@ Official implementation and evaluation resources for **Full-Mix Historical Music
 
 This repository studies historical music restoration as conditional flow matching in the continuous latent space of the frozen [SAME-L](https://huggingface.co/stabilityai/SAME-L) audio autoencoder. The proposed 40M-parameter model, **SAMECFM**, maps degraded historical-audio latents toward clean musical-audio latents and decodes the restored representation at 44.1 kHz.
 
-> **Release status:** implementation, paper PDF, interactive demo, aggregate subjective results, and the reserved dataset DOI are included. Model checkpoints and the arXiv identifier are forthcoming.
+> **Release status:** implementation, paper PDF, interactive demo, aggregate subjective results, and the published dataset are included. Model checkpoints and the arXiv identifier are forthcoming.
 
-**[Interactive demo](demo/)** · **[Paper PDF](paper/full_mix_historical_music_restoration.pdf)** · **[Dataset DOI (reserved)](https://doi.org/10.5281/zenodo.22737610)**
+**[Interactive demo](https://full-mix-historical-music-restorati.vercel.app)** · **[Paper PDF](paper/full_mix_historical_music_restoration.pdf)** · **[Published dataset](https://doi.org/10.5281/zenodo.22737610)**
 
 ## Method
 
@@ -107,7 +107,7 @@ Aggregate subjective results are provided under [`results/`](results/). The sens
 
 ## Dataset
 
-The historical unpaired test set contains 149 full-length recordings: 70 Orchestra and 79 Light Orchestra items. Zenodo DOI [`10.5281/zenodo.22737610`](https://doi.org/10.5281/zenodo.22737610) is reserved and will resolve after the dataset draft is published.
+The published historical unpaired test set contains 149 full-length recordings: 70 Orchestra and 79 Light Orchestra items. It is available from Zenodo at DOI [`10.5281/zenodo.22737610`](https://doi.org/10.5281/zenodo.22737610).
 
 ## Checkpoints and examples
 

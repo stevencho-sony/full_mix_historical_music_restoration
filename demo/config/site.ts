@@ -5,8 +5,8 @@ export const siteConfig = {
     "Audio demonstrations and results for latent-space restoration of historical full-mix classical music recordings.",
   paperUrl: "/paper.pdf",
   githubUrl: "https://github.com/stevencho-sony/full_mix_historical_music_restoration",
-  datasetUrl: "",
-  datasetStatus: "Zenodo dataset · link forthcoming",
+  datasetUrl: "https://doi.org/10.5281/zenodo.22737610",
+  datasetStatus: "Published on Zenodo",
   arxivUrl: "",
   year: 2026,
 };
