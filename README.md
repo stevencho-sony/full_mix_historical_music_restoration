@@ -6,7 +6,7 @@ This repository studies historical music restoration as conditional flow matchin
 
 > **Release status:** implementation, paper PDF, interactive demo, aggregate subjective results, and the published dataset are included. Model checkpoints and the arXiv identifier are forthcoming.
 
-**[Interactive demo](https://end-to-end-historical-music-restoration.vercel.app)** · **[Paper PDF](paper/full_mix_historical_music_restoration.pdf)** · **[Published dataset](https://doi.org/10.5281/zenodo.22737610)**
+**[Interactive demo](https://full-mix-historical-music-restorati.vercel.app)** · **[Paper PDF](paper/full_mix_historical_music_restoration.pdf)** · **[Published dataset](https://doi.org/10.5281/zenodo.22737610)**
 
 ## Method
 
