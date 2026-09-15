@@ -44,9 +44,9 @@ Historical conditions use this convention:
 ```text
 public/audio/historical/example-id/input.mp3
 public/audio/historical/example-id/behm-p.mp3
-public/audio/historical/example-id/behm-fms.mp3
+public/audio/historical/example-id/behm-fos.mp3
 public/audio/historical/example-id/babe2-p.mp3
-public/audio/historical/example-id/babe2-fms.mp3
+public/audio/historical/example-id/babe2-fos.mp3
 public/audio/historical/example-id/samecfm.mp3
 ```
 
@@ -59,6 +59,7 @@ python3 scripts/stage_demo_audio.py
 ```
 
 The script records audio source paths, offsets, gains, hashes, channels, sample rates, and durations in `data/generated/`. Those absolute source paths are provenance records and are not used by the deployed site.
+Provenance-only source paths may retain the legacy `fms` experiment identifier; all public terminology uses FOS (Full-Orchestra + Section).
 
 The Method section renders the paper pipeline figure from `public/figures/finalICASSPgood_qual.png` at the full content width.
 
@@ -72,7 +73,7 @@ Edit [`config/site.ts`](config/site.ts):
 
 ```ts
 paperUrl: "/paper.pdf",
-githubUrl: "https://github.com/stevencho-sony/full_mix_historical_music_restoration",
+githubUrl: "https://github.com/stevencho24/End-to-End_historical_music_restoration",
 datasetUrl: "https://doi.org/10.5281/zenodo.22737610",
 arxivUrl: "",
 ```

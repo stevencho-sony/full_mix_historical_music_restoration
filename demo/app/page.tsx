@@ -37,7 +37,7 @@ export default function Home() {
 
         <section className="section method-section" id="method" aria-labelledby="method-title">
           <div className="container">
-            <div className="section-heading"><p className="eyebrow">Method</p><h2 id="method-title">Synthetic degradation + latent restoration</h2><p>SAMECFM learns a conditional velocity field between degraded and clean SAME-L latents, then decodes the restored representation at 44.1 kHz.</p></div>
+            <div className="section-heading"><p className="eyebrow">Method</p><h2 id="method-title">Synthetic degradation + latent restoration</h2><p>SAMECFM is trained with Full-Orchestra + Section (FOS) data. It learns a conditional velocity field between degraded and clean SAME-L latents, then decodes the restored representation at 44.1 kHz.</p></div>
             <PipelineDiagram />
           </div>
         </section>

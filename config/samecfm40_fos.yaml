@@ -75,7 +75,7 @@ corruption:
     snr_max_db: 20.0
 
 dataset:
-  root: data/public_classical_fullmixes_plus_sections
+  root: data/public_classical_orchestral_plus_sections
   sample_rate: 44100
   segment_duration: 5.0
   min_stems: 1

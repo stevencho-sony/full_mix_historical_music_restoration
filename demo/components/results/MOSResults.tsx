@@ -5,7 +5,7 @@ import { mosPreservation, mosQuality } from "@/data/results";
 const methodColors: Record<string, string> = {
   INPUT: "#2563eb",
   BABE2_PRETRAINED: "#dc2626",
-  BABE2_FMS: "#d97706",
+  BABE2_FOS: "#d97706",
   CFM40_GRAMOPHONE_ONLY: "#16a34a",
   CFM40: "#7c3aed",
   GROUND_TRUTH: "#0891b2",

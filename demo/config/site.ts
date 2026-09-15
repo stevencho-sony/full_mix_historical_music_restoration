@@ -2,9 +2,9 @@ export const siteConfig = {
   title: "End-to-End Historical Music Restoration in Latent Space",
   shortTitle: "Historical Music Restoration",
   description:
-    "Audio demonstrations and results for latent-space restoration of historical full-mix classical music recordings.",
+    "Audio demonstrations and results for latent-space restoration of historical orchestral recordings.",
   paperUrl: "/paper.pdf",
-  githubUrl: "https://github.com/stevencho-sony/full_mix_historical_music_restoration",
+  githubUrl: "https://github.com/stevencho24/End-to-End_historical_music_restoration",
   datasetUrl: "https://doi.org/10.5281/zenodo.22737610",
   datasetStatus: "Published on Zenodo",
   arxivUrl: "",

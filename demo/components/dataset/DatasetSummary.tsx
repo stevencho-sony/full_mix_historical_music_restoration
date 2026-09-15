@@ -17,7 +17,7 @@ export function DatasetSummary() {
           {stats.map(({ value, label, icon: Icon }) => <article key={label}><Icon size={18} aria-hidden="true" /><strong>{value}</strong><span>{label}</span></article>)}
         </div>
         <div className="dataset-copy">
-          <p><strong>Orchestra</strong> contains classical symphonic orchestras. <strong>Light Orchestra</strong> contains other instrumental classical ensembles, including chamber and wind ensembles.</p>
+          <p><strong>Full-Orchestra</strong> contains classical symphonic orchestras. <strong>Light Orchestra</strong> contains other instrumental classical ensembles, including chamber and wind ensembles.</p>
           <p>Recordings span 1911–1925 and differ naturally in bandwidth limitation, surface noise, clicks, crackle, distortion, and preservation condition. There is no corresponding clean recording of the same performance.</p>
         </div>
         <div className="dataset-action">

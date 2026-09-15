@@ -6,7 +6,7 @@ This repository studies historical music restoration as conditional flow matchin
 
 > **Release status:** implementation, paper PDF, interactive demo, aggregate subjective results, and the published dataset are included. Model checkpoints and the arXiv identifier are forthcoming.
 
-**[Interactive demo](https://full-mix-historical-music-restorati.vercel.app)** · **[Paper PDF](paper/full_mix_historical_music_restoration.pdf)** · **[Published dataset](https://doi.org/10.5281/zenodo.22737610)**
+**[Interactive demo](https://end-to-end-historical-music-restoration.vercel.app)** · **[Paper PDF](paper/full_mix_historical_music_restoration.pdf)** · **[Published dataset](https://doi.org/10.5281/zenodo.22737610)**
 
 ## Method
 
@@ -21,7 +21,7 @@ clean estimate  <- frozen SAME-L decoder <- restored latent
 
 The principal training configuration uses:
 
-- full musical mixtures plus instrumental sections;
+- Full-Orchestra recordings plus instrumental sections, denoted Full-Orchestra + Section (FOS);
 - a leak-free song-level train/validation split;
 - five-second, 44.1-kHz training windows;
 - whole-song loudness normalization before windowing;
@@ -33,7 +33,7 @@ The principal training configuration uses:
 Every clean training window passes through the same ordered five-stage chain;
 there is no probability gating. Gaussian draws are clipped to the stated
 ranges. The complete machine-readable configuration is
-[`config/samecfm40_fms.yaml`](config/samecfm40_fms.yaml).
+[`config/samecfm40_fos.yaml`](config/samecfm40_fos.yaml).
 
 | Stage | Operation | Sampling parameters |
 |---|---|---|
@@ -83,8 +83,8 @@ For Vercel, import this repository and set the project **Root Directory** to `de
 Python 3.11 and a CUDA-capable PyTorch environment are recommended.
 
 ```bash
-git clone https://github.com/stevencho-sony/full_mix_historical_music_restoration.git
-cd full_mix_historical_music_restoration
+git clone https://github.com/stevencho24/End-to-End_historical_music_restoration.git
+cd End-to-End_historical_music_restoration
 pip install -e .
 ```
 
@@ -96,7 +96,7 @@ After downloading a released checkpoint:
 
 ```bash
 python main.py infer \
-  --checkpoint checkpoints/samecfm_40m_fms.pt \
+  --checkpoint checkpoints/samecfm_40m_fos.pt \
   --input examples/historical_input.wav \
   --output output/restored.wav \
   --device cuda
@@ -106,19 +106,19 @@ Arbitrary-length input is processed using overlap-add. Audio is converted to the
 
 ## Training
 
-The paper configuration is provided in [`config/samecfm40_fms.yaml`](config/samecfm40_fms.yaml). Replace the documented dataset paths with local paths, then run:
+The paper's Full-Orchestra + Section (FOS) configuration is provided in [`config/samecfm40_fos.yaml`](config/samecfm40_fos.yaml). Replace the documented dataset paths with local paths, then run:
 
 ```bash
 torchrun --standalone --nproc_per_node=4 main.py train \
-  --name samecfm40_fms \
-  --config config/samecfm40_fms.yaml
+  --name samecfm40_fos \
+  --config config/samecfm40_fos.yaml
 ```
 
 ## Evaluation
 
 The paper evaluates restoration on:
 
-- an unpaired historical Internet Archive test set split into Orchestra and Light Orchestra;
+- an unpaired historical Internet Archive test set split into Full-Orchestra and Light Orchestra;
 - a synthetic paired test set with aligned clean references;
 - objective perceptual, spectral, embedding-distribution, embedding-similarity, and fidelity metrics;
 - MOS-Quality and reference-based MOS-Preservation listening tests.
@@ -127,7 +127,7 @@ Aggregate subjective results are provided under [`results/`](results/). The sens
 
 ## Dataset
 
-The published historical unpaired test set contains 149 full-length recordings: 70 Orchestra and 79 Light Orchestra items. It is available from Zenodo at DOI [`10.5281/zenodo.22737610`](https://doi.org/10.5281/zenodo.22737610).
+The published historical unpaired test set contains 149 full-length recordings: 70 Full-Orchestra and 79 Light Orchestra items. It is available from Zenodo at DOI [`10.5281/zenodo.22737610`](https://doi.org/10.5281/zenodo.22737610).
 
 ## Checkpoints and examples
 

@@ -1,4 +1,4 @@
-export type AudioCategory = "Orchestra" | "Light Orchestra";
+export type AudioCategory = "Full-Orchestra" | "Light Orchestra";
 
 export interface AudioCondition {
   id: string;

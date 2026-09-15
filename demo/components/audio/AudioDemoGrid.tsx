@@ -4,7 +4,7 @@ import { useState } from "react";
 import type { AudioCategory, AudioExample } from "@/types/audio";
 import { AudioExampleCard } from "./AudioExampleCard";
 
-const filters: ("All" | AudioCategory)[] = ["All", "Orchestra", "Light Orchestra"];
+const filters: ("All" | AudioCategory)[] = ["All", "Full-Orchestra", "Light Orchestra"];
 
 export function AudioDemoGrid({ examples }: { examples: AudioExample[] }) {
   const [filter, setFilter] = useState<(typeof filters)[number]>("All");

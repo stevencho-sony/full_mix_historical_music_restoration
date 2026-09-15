@@ -74,10 +74,10 @@ def main() -> None:
         destinations = {
             "input": (STAGED / window_id / "INPUT.wav", None, web_safety_gain),
             "babe2-p": (STAGED / window_id / "BABE2_PRETRAINED.wav", None, web_safety_gain),
-            "babe2-fms": (STAGED / window_id / "BABE2_FMS.wav", None, web_safety_gain),
+            "babe2-fos": (STAGED / window_id / "BABE2_FMS.wav", None, web_safety_gain),
             "samecfm": (STAGED / window_id / "CFM40.wav", None, web_safety_gain),
             "behm-p": (BEHM / "denoiser_only_44k_compat" / filename, offset, gains[window_id] * web_safety_gain),
-            "behm-fms": (BEHM / "fms_leakless" / filename, offset, gains[window_id] * web_safety_gain),
+            "behm-fos": (BEHM / "fms_leakless" / filename, offset, gains[window_id] * web_safety_gain),
         }
         for condition, (source, source_offset, gain) in destinations.items():
             output = ROOT / "public/audio/historical" / example_id / f"{condition}.mp3"
