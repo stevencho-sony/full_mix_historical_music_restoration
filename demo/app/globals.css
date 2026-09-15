@@ -120,11 +120,11 @@ img { max-width: 100%; height: auto; }
 .mos-axis { display: flex; flex-direction: column; justify-content: space-between; color: var(--muted); font-size: .65rem; }
 .mos-columns { display: grid; grid-template-columns: repeat(var(--count, 6), 1fr); }
 .mos-column { position: relative; min-width: 0; }
-.ci-track { position: absolute; left: 50%; width: 2px; transform: translateX(-50%); background: var(--accent); }
-.ci-track::before, .ci-track::after { content: ""; position: absolute; left: -5px; width: 12px; height: 2px; background: var(--accent); }
+.ci-track { position: absolute; left: 50%; width: 2px; transform: translateX(-50%); background: var(--series-color, var(--accent)); }
+.ci-track::before, .ci-track::after { content: ""; position: absolute; left: -5px; width: 12px; height: 2px; background: var(--series-color, var(--accent)); }
 .ci-track::before { top: 0; }
 .ci-track::after { bottom: 0; }
-.ci-track b { position: absolute; left: -5px; width: 12px; height: 12px; transform: translateY(50%); border: 2px solid white; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.ci-track b { position: absolute; left: -5px; width: 12px; height: 12px; transform: translateY(50%); border: 2px solid white; border-radius: 50%; background: var(--series-color, var(--accent)); box-shadow: 0 0 0 1px var(--series-color, var(--accent)); }
 .mos-value { position: absolute; left: 50%; bottom: calc(var(--mean, 50%) + .25rem); transform: translateX(-50%); color: #4d5559; font-size: .62rem; font-weight: 700; }
 .mos-label { position: absolute; top: calc(100% + .4rem); left: 50%; width: 92px; transform: translateX(-50%) rotate(-27deg); transform-origin: top center; color: #41484c; font-size: .62rem; text-align: center; }
 .method-note { margin: 3.8rem 0 0; color: #b9c0c3; font-size: .75rem; }

@@ -13,8 +13,8 @@ describe("published research data", () => {
   });
 
   it("matches the validated subjective sensitivity analysis", () => {
-    expect(mosQuality.find((row) => row.method === "CFM40")?.mean).toBe(3.969);
-    expect(mosPreservation.find((row) => row.method === "CFM40")?.mean).toBe(4.375);
+    expect(mosQuality.find((row) => row.method === "CFM40")?.mean).toBe(3.886);
+    expect(mosPreservation.find((row) => row.method === "CFM40")?.mean).toBe(4.318);
   });
 
   it("ships every referenced media file", () => {

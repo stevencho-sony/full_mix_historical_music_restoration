@@ -1,17 +1,17 @@
 import type { MosResult } from "@/types/results";
 
 export const mosQuality: MosResult[] = [
-  { method: "INPUT", label: "Input", mean: 1.406, ciLow: 0.943, ciHigh: 1.870 },
-  { method: "BABE2_PRETRAINED", label: "BABE2-P", mean: 3.609, ciLow: 3.233, ciHigh: 3.986 },
-  { method: "BABE2_FMS", label: "BABE2-FMS", mean: 2.859, ciLow: 2.495, ciHigh: 3.223 },
-  { method: "CFM40", label: "SAMECFM", mean: 3.969, ciLow: 3.712, ciHigh: 4.226 },
-  { method: "CFM40_GRAMOPHONE_ONLY", label: "SAMECFM-G", mean: 3.406, ciLow: 3.107, ciHigh: 3.706 },
-  { method: "GROUND_TRUTH", label: "Ground truth", mean: 4.406, ciLow: 4.206, ciHigh: 4.606 },
+  { method: "INPUT", label: "Input", mean: 1.170, ciLow: 1.055, ciHigh: 1.286 },
+  { method: "BABE2_PRETRAINED", label: "BABE2-P", mean: 3.523, ciLow: 3.243, ciHigh: 3.803 },
+  { method: "BABE2_FMS", label: "BABE2-FMS", mean: 2.716, ciLow: 2.473, ciHigh: 2.959 },
+  { method: "CFM40_GRAMOPHONE_ONLY", label: "SAMECFM-G", mean: 3.216, ciLow: 2.966, ciHigh: 3.466 },
+  { method: "CFM40", label: "SAMECFM", mean: 3.886, ciLow: 3.706, ciHigh: 4.066 },
+  { method: "GROUND_TRUTH", label: "Ground truth", mean: 4.443, ciLow: 4.298, ciHigh: 4.588 },
 ];
 
 export const mosPreservation: MosResult[] = [
-  { method: "BABE2_PRETRAINED", label: "BABE2-P", mean: 3.797, ciLow: 3.300, ciHigh: 4.293 },
-  { method: "BABE2_FMS", label: "BABE2-FMS", mean: 3.938, ciLow: 3.652, ciHigh: 4.223 },
-  { method: "CFM40", label: "SAMECFM", mean: 4.375, ciLow: 4.096, ciHigh: 4.654 },
-  { method: "CFM40_GRAMOPHONE_ONLY", label: "SAMECFM-G", mean: 4.453, ciLow: 4.257, ciHigh: 4.649 },
+  { method: "BABE2_PRETRAINED", label: "BABE2-P", mean: 3.705, ciLow: 3.340, ciHigh: 4.069 },
+  { method: "BABE2_FMS", label: "BABE2-FMS", mean: 3.898, ciLow: 3.616, ciHigh: 4.179 },
+  { method: "CFM40_GRAMOPHONE_ONLY", label: "SAMECFM-G", mean: 4.261, ciLow: 3.995, ciHigh: 4.527 },
+  { method: "CFM40", label: "SAMECFM", mean: 4.318, ciLow: 4.057, ciHigh: 4.579 },
 ];

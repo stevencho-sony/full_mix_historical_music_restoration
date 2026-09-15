@@ -2,6 +2,15 @@ import type { CSSProperties } from "react";
 import type { MosResult } from "@/types/results";
 import { mosPreservation, mosQuality } from "@/data/results";
 
+const methodColors: Record<string, string> = {
+  INPUT: "#2563eb",
+  BABE2_PRETRAINED: "#dc2626",
+  BABE2_FMS: "#d97706",
+  CFM40_GRAMOPHONE_ONLY: "#16a34a",
+  CFM40: "#7c3aed",
+  GROUND_TRUTH: "#0891b2",
+};
+
 function MosChart({ data, label }: { data: MosResult[]; label: string }) {
   return (
     <div
@@ -17,7 +26,12 @@ function MosChart({ data, label }: { data: MosResult[]; label: string }) {
           const low = Math.max(0, ((item.ciLow - 1) / 4) * 100);
           const high = Math.min(100, ((item.ciHigh - 1) / 4) * 100);
           return (
-            <div className="mos-column" key={item.method} title={`${item.mean.toFixed(2)} (95% CI ${item.ciLow.toFixed(2)}–${item.ciHigh.toFixed(2)})`}>
+            <div
+              className="mos-column"
+              key={item.method}
+              title={`${item.mean.toFixed(2)} (95% CI ${item.ciLow.toFixed(2)}–${item.ciHigh.toFixed(2)})`}
+              style={{ "--series-color": methodColors[item.method] } as CSSProperties}
+            >
               <div className="ci-track" aria-hidden="true" style={{ bottom: `${low}%`, height: `${high - low}%` }}>
                 <b style={{ bottom: `${((mean - low) / (high - low || 1)) * 100}%` }} />
               </div>
@@ -38,7 +52,7 @@ export function MOSResults() {
         <article><h3>MOS-Quality</h3><MosChart data={mosQuality} label="MOS Quality" /></article>
         <article><h3>MOS-Preservation</h3><MosChart data={mosPreservation} label="MOS Preservation" /></article>
       </div>
-      <figcaption className="method-note"><strong>Sensitivity analysis:</strong> 16 of 27 listeners were retained after requiring a mean ground-truth quality score of at least 4. Points show means and vertical intervals show participant-level 95% confidence intervals.</figcaption>
+      <figcaption className="method-note"><strong>Validated sensitivity analysis:</strong> 22 of 38 listeners were retained after requiring a mean ground-truth quality score of at least 4 and a mean historical-input quality score below 2. Points show means and vertical intervals show participant-level 95% confidence intervals.</figcaption>
     </figure>
   );
 }
