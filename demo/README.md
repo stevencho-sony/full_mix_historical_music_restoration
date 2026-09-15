@@ -1,6 +1,6 @@
 # Historical Music Restoration Demo
 
-Companion audio-demonstration website for **Full-Mix Historical Music Restoration in Latent Space**. It lives inside the official paper repository and contains precomputed five-second comparisons that Vercel can host without a backend or GPU.
+Companion audio-demonstration website for **End-to-End Historical Music Restoration in Latent Space**. It lives inside the official paper repository and contains precomputed five-second comparisons that Vercel can host without a backend or GPU.
 
 ## Run locally
 

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  title: "Full-Mix Historical Music Restoration in Latent Space",
+  title: "End-to-End Historical Music Restoration in Latent Space",
   shortTitle: "Historical Music Restoration",
   description:
     "Audio demonstrations and results for latent-space restoration of historical full-mix classical music recordings.",
@@ -29,7 +29,7 @@ export const affiliations = [
 ];
 
 export const preliminaryBibtex = `@article{cho2026historical,
-  title={Full-Mix Historical Music Restoration in Latent Space},
+  title={End-to-End Historical Music Restoration in Latent Space},
   author={Cho, Steven and Koo, Junghyun and Lafargue, Raphael and Dhyani, Tushar and Moliner, Eloi and Mitsufuji, Yuki},
   year={2026}
 }`;

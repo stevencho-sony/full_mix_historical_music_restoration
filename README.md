@@ -1,6 +1,6 @@
-# Full-Mix Historical Music Restoration in Latent Space
+# End-to-End Historical Music Restoration in Latent Space
 
-Official implementation and evaluation resources for **Full-Mix Historical Music Restoration in Latent Space**.
+Official implementation and evaluation resources for **End-to-End Historical Music Restoration in Latent Space**.
 
 This repository studies historical music restoration as conditional flow matching in the continuous latent space of the frozen [SAME-L](https://huggingface.co/stabilityai/SAME-L) audio autoencoder. The proposed 40M-parameter model, **SAMECFM**, maps degraded historical-audio latents toward clean musical-audio latents and decodes the restored representation at 44.1 kHz.
 
@@ -27,6 +27,26 @@ The principal training configuration uses:
 - whole-song loudness normalization before windowing;
 - a five-stage historical-recording degradation model;
 - a 40M-parameter conditional flow-matching DiT in SAME-L space.
+
+### Synthetic historical degradation
+
+Every clean training window passes through the same ordered five-stage chain;
+there is no probability gating. Gaussian draws are clipped to the stated
+ranges. The complete machine-readable configuration is
+[`config/samecfm40_fms.yaml`](config/samecfm40_fms.yaml).
+
+| Stage | Operation | Sampling parameters |
+|---|---|---|
+| 1 | Zero-phase EQ 1 | Nodes: 40, 80, 160, 320, 640, 1280, 2560, 5120, 10240, 20480 Hz; mean gains: −9.0, −4.9, −4.9, 0.0, 0.0, −3.1, −1.1, −8.6, −2.1, 0.0 dB; independent standard deviation 14.7 dB; clipped to [−80, 0] dB |
+| 2 | Scaled-tanh nonlinearity | Drive `a ~ N(2.2, 0.9)`, clipped to [0.75, 4.5]; wet mix `w ~ N(0.18, 0.09)`, clipped to [0.03, 0.40]; `y=(1−w)x+w tanh(ax)/a` |
+| 3 | Zero-phase EQ 2 | Same nodes, standard deviation, and clipping as EQ 1; mean gains: −3.0, −4.9, −4.9, 0.0, 0.0, −3.1, −1.1, −8.6, −2.1, 0.0 dB |
+| 4 | Smooth band-pass | Low cutoff `N(100,50)` Hz clipped to [40,250]; high cutoff `N(3200,850)` Hz clipped to [2000,5500]; low slope `N(18,8)` dB/oct clipped to [6,48]; high slope `N(30,10)` dB/oct clipped to [12,60] |
+| 5 | Real gramophone surface noise | Random segment from the Gramophone Record Noise Dataset; SNR `N(11,4.5)` dB clipped to [2,20] dB |
+
+The two EQ curves are independently sampled and use log-frequency
+interpolation. They form a Wiener–Hammerstein sequence around the static
+nonlinearity. Filtering is zero phase to retain temporal alignment between
+each degraded input and its clean target. White-noise augmentation is not used.
 
 ## Repository layout
 
@@ -125,8 +145,8 @@ The small public listening examples are bundled in the demo. Model checkpoints w
 If you use this work, please cite the paper and the accompanying dataset. Final bibliographic metadata will replace the placeholder below when the arXiv record is available.
 
 ```bibtex
-@article{cho2026fullmix,
-  title   = {Full-Mix Historical Music Restoration in Latent Space},
+@article{cho2026endtoend,
+  title   = {End-to-End Historical Music Restoration in Latent Space},
   author  = {Cho, Steven and Koo, Junghyun and Lafargue, Raphael and Dhyani, Tushar and Moliner, Eloi and Mitsufuji, Yuki},
   year    = {2026},
   note    = {arXiv preprint; identifier forthcoming}
