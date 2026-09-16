@@ -127,7 +127,7 @@ Aggregate subjective results are provided under [`results/`](results/). The sens
 
 ## Dataset
 
-The published historical unpaired test set contains 149 full-length recordings: 70 Full-Orchestra and 79 Light Orchestra items. It is available from Zenodo at DOI [`10.5281/zenodo.22737610`](https://doi.org/10.5281/zenodo.22737610).
+The published historical unpaired test set contains 149 full-length recordings totaling **9.30 hours**: 70 Full-Orchestra and 79 Light Orchestra items. It is available from Zenodo at DOI [`10.5281/zenodo.22737610`](https://doi.org/10.5281/zenodo.22737610).
 
 ## Checkpoints and examples
 
