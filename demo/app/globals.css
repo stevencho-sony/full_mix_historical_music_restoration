@@ -125,7 +125,7 @@ img { max-width: 100%; height: auto; }
 .ci-track::before { top: 0; }
 .ci-track::after { bottom: 0; }
 .ci-track b { position: absolute; left: -5px; width: 12px; height: 12px; transform: translateY(50%); border: 2px solid white; border-radius: 50%; background: var(--series-color, var(--accent)); box-shadow: 0 0 0 1px var(--series-color, var(--accent)); }
-.mos-value { position: absolute; left: calc(50% + .7rem); bottom: var(--mean, 50%); transform: translateY(50%); color: #4d5559; font-size: .62rem; font-weight: 700; white-space: nowrap; }
+.mos-value { position: absolute; z-index: 2; left: calc(50% + .85rem); bottom: var(--mean, 50%); transform: translateY(50%); border-radius: 3px; padding: 0 .12rem; color: #30373a; background: rgb(255 255 255 / 92%); font-size: .62rem; font-weight: 700; line-height: 1.25; white-space: nowrap; }
 .mos-label { position: absolute; top: calc(100% + .55rem); left: 50%; width: 100%; transform: translateX(-50%); color: #41484c; font-size: .62rem; text-align: center; white-space: nowrap; }
 .method-note { margin: 3.8rem 0 0; color: #b9c0c3; font-size: .75rem; }
 .dataset-section { border-top: 1px solid var(--line); background: #eee9e0; }
